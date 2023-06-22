@@ -9,27 +9,15 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
+// 論理演算子no本当の意味を知る
 
+// ||は左側が「false」の場合に右側を返す
+// const num = false;
+const num = 100;
+const fee = num || "金額未設定です";
+console.log(fee)
 
-// mapやfilterの練習
-const nameArr = ["田中", "suzuki", "doubara"];
-
-// for文
-for (let i = 0; i < nameArr.length; i++) {
-  console.log(`${nameArr[i]}さん、こんにちは。あなたは${i + 1}番目の訪問でです。`)
-}
-
-// map
-const nameArr2 = nameArr.map((name) => {
-  return name + "さん";
-})
-console.log(nameArr2)
-
-nameArr.map((name, index) => console.log(`${name}さん、あなたは${index + 1}番目です。`));
-
-// filter
-const numArr3 = [1, 2, 3, 4, 5, 6, 7, 8];
-const newNumArr = numArr3.filter((num) => {
-  return num % 2 === 1; // 奇数だけ取り出した配列をつくってみる
-})
-console.log(newNumArr);
+// &&は左側が「true」の場合に右側を返す
+const num2 = 100;
+const fee2 = num2 && "なにか設定されました";
+console.log(fee2);

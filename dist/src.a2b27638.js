@@ -178,30 +178,18 @@ module.hot.accept(reloadCSS);
 require("./styles.css");
 document.getElementById("app").innerHTML = "\n<h1>Hello Vanilla!</h1>\n<div>\n  We use the same configuration as Parcel to bundle this sandbox, you can find more\n  info about Parcel\n  <a href=\"https://parceljs.org\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>.\n</div>\n";
 
-// mapやfilterの練習
-var nameArr = ["田中", "suzuki", "doubara"];
+// 論理演算子no本当の意味を知る
 
-// for文
-for (var i = 0; i < nameArr.length; i++) {
-  console.log("".concat(nameArr[i], "\u3055\u3093\u3001\u3053\u3093\u306B\u3061\u306F\u3002\u3042\u306A\u305F\u306F").concat(i + 1, "\u756A\u76EE\u306E\u8A2A\u554F\u3067\u3067\u3059\u3002"));
-}
+// ||は左側が「false」の場合に右側を返す
+// const num = false;
+var num = 100;
+var fee = num || "金額未設定です";
+console.log(fee);
 
-// map
-var nameArr2 = nameArr.map(function (name) {
-  return name + "さん";
-});
-console.log(nameArr2);
-nameArr.map(function (name, index) {
-  return console.log("".concat(name, "\u3055\u3093\u3001\u3042\u306A\u305F\u306F").concat(index + 1, "\u756A\u76EE\u3067\u3059\u3002"));
-});
-
-// filter
-var numArr3 = [1, 2, 3, 4, 5, 6, 7, 8];
-var newNumArr = numArr3.filter(function (num) {
-  return num % 2 === 1; // 奇数だけ取り出した配列をつくってみる
-});
-
-console.log(newNumArr);
+// &&は左側が「true」の場合に右側を返す
+var num2 = 100;
+var fee2 = num2 && "なにか設定されました";
+console.log(fee2);
 },{"./styles.css":"src/styles.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
