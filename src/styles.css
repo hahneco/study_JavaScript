@@ -1,3 +1,68 @@
+/* デザイントークン */
+:root {
+  /* 基本カラー */
+  --blue: #c1ffff;
+  --yellow: #fdffce;
+  --gray: #dfdede;
+
+  /* 幅,スペース */
+  --contents-width: 400px;
+  --padding: 8px;
+  --margin: 8px;
+  --border-radius: 8px;
+}
+
 body {
   font-family: sans-serif;
+}
+
+input {
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 6px 16px;
+  outline: none;
+}
+
+button {
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 4px 16px;
+  transition: .3s;
+}
+
+button:hover {
+  background-color: coral;
+  color: white;
+  cursor: pointer;
+}
+
+.basicContainer {
+  padding: var(--padding);
+  margin: var(--margin);
+  border-radius: var(--border-radius);
+}
+
+.input-area {
+  background-color: var(--blue);
+  width: var(--contents-width);
+  height: 30px;
+}
+
+.imcomplete-area {
+  background-color: var(--yellow);
+  width: var(--contents-width);
+  height: 200px;
+}
+
+.complete-area {
+  background-color: var(--gray);
+  width: var(--contents-width);
+  height: 200px;
+}
+
+.title {
+  text-align: center;
+  margin-top: 0;
+  font-weight: 900;
+  color: #666;
 }
