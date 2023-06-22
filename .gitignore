@@ -1,1 +1,7 @@
 node_modules
+# exe ファイルは要らない
+*.exe
+# bin フォルダは要らない
+bin/
+dir/
+.cache/
