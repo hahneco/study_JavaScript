@@ -176,11 +176,39 @@ module.hot.accept(reloadCSS);
 "use strict";
 
 require("./styles.css");
-document.getElementById("app").innerHTML = "\n<h1>Hello Vanilla!</h1>\n<div>\n  We use the same configuration as Parcel to bundle this sandbox, you can find more\n  info about Parcel \n  <a href=\"https://parceljs.org\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>.\n</div>\n";
+var _console;
+document.getElementById("app").innerHTML = "\n<h1>Hello Vanilla!</h1>\n<div>\n  We use the same configuration as Parcel to bundle this sandbox, you can find more\n  info about Parcel\n  <a href=\"https://parceljs.org\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>.\n</div>\n";
 
 // 配列の展開
-var arr1 = [1, 2];
+var arr1 = [1, 2, 3, 4];
 console.log(arr1);
+(_console = console).log.apply(_console, arr1);
+var sumFunc = function sumFunc(num1, num2) {
+  console.log(num1 + num2);
+};
+sumFunc(arr1[0], arr1[1]);
+sumFunc.apply(void 0, arr1);
+
+// まとめる
+var arr2 = [1, 2, 3, 4, 5];
+var num1 = arr2[0],
+  num2 = arr2[1],
+  num3 = arr2.slice(2);
+console.log(num1);
+console.log(num2);
+console.log(num3);
+
+// 配列のコピー、結合
+var arr3 = [10, 20];
+var arr4 = [30, 40];
+
+// * こぴー
+var arr6 = [].concat(arr3);
+console.log(arr6);
+
+// 結合
+var arr7 = [].concat(arr3, arr4);
+console.log(arr7);
 },{"./styles.css":"src/styles.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -206,7 +234,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51794" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56713" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
