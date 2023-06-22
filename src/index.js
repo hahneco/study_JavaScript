@@ -9,33 +9,27 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
-// 配列の展開
-const arr1 = [1, 2, 3, 4];
-console.log(arr1);
-console.log(...arr1);
 
-const sumFunc = (num1, num2) => {
-  console.log(num1 + num2)
+
+// mapやfilterの練習
+const nameArr = ["田中", "suzuki", "doubara"];
+
+// for文
+for (let i = 0; i < nameArr.length; i++) {
+  console.log(`${nameArr[i]}さん、こんにちは。あなたは${i + 1}番目の訪問でです。`)
 }
 
-sumFunc(arr1[0], arr1[1])
-sumFunc(...arr1);
+// map
+const nameArr2 = nameArr.map((name) => {
+  return name + "さん";
+})
+console.log(nameArr2)
 
-// まとめる
-const arr2 = [1, 2, 3, 4, 5];
-const [num1, num2, ...num3] = arr2;
-console.log(num1);
-console.log(num2);
-console.log(num3);
+nameArr.map((name, index) => console.log(`${name}さん、あなたは${index + 1}番目です。`));
 
-// 配列のコピー、結合
-const arr3 = [10, 20];
-const arr4 = [30, 40];
-
-// * こぴー
-const arr6 = [...arr3];
-console.log(arr6);
-
-// 結合
-const arr7 = [...arr3, ...arr4];
-console.log(arr7);
+// filter
+const numArr3 = [1, 2, 3, 4, 5, 6, 7, 8];
+const newNumArr = numArr3.filter((num) => {
+  return num % 2 === 1; // 奇数だけ取り出した配列をつくってみる
+})
+console.log(newNumArr);
