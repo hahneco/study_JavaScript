@@ -57,7 +57,7 @@ button:hover {
   height: 30px;
 }
 
-.imcomplete-area {
+.incomplete-area {
   background-color: var(--yellow);
   width: var(--contents-width);
   height: 200px;
