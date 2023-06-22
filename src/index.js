@@ -2,34 +2,41 @@ import "./styles.css";
 
 
 // 定数,広域変数
-let newInputText = "";
+// let newInputText = "";
 
 
 // 関数
 const onClickAdd = () => {
   const inputText = document.getElementById("add-text").value;
-  newInputText = inputText
+  // newInputText = inputText
   document.getElementById("add-text").value = "";
 
-  makeTodoLists();
+  makeTodoLists(inputText);
 }
 
-const makeTodoLists = () => {
+const makeTodoLists = (inputText) => {
 // div生成
   const div = document.createElement("div");
   div.className = "list-row";
 
   // li生成
   const li = document.createElement("li");
-  li.innerText = newInputText;
+  // li.innerText = newInputText;
+  li.innerText = inputText;
 
   // 完了ボタン生成
   const completeButton = document.createElement("button");
   completeButton.innerText = "完了";
+  completeButton.addEventListener("click", () => {
+    console.log("完了")
+  })
 
   // 削除ボタン生成
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
+  deleteButton.addEventListener("click", () => {
+    console.log("削除")
+  })
 
   // divタグの下に子要素を追加
   div.appendChild(li);

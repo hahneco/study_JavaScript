@@ -177,31 +177,37 @@ module.hot.accept(reloadCSS);
 
 require("./styles.css");
 // 定数,広域変数
-var newInputText = "";
-
+// let newInputText = "";
 // 関数
 var onClickAdd = function onClickAdd() {
   var inputText = document.getElementById("add-text").value;
-  newInputText = inputText;
+  // newInputText = inputText
   document.getElementById("add-text").value = "";
-  makeTodoLists();
+  makeTodoLists(inputText);
 };
-var makeTodoLists = function makeTodoLists() {
+var makeTodoLists = function makeTodoLists(inputText) {
   // div生成
   var div = document.createElement("div");
   div.className = "list-row";
 
   // li生成
   var li = document.createElement("li");
-  li.innerText = newInputText;
+  // li.innerText = newInputText;
+  li.innerText = inputText;
 
   // 完了ボタン生成
   var completeButton = document.createElement("button");
   completeButton.innerText = "完了";
+  completeButton.addEventListener("click", function () {
+    console.log("完了");
+  });
 
   // 削除ボタン生成
   var deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
+  deleteButton.addEventListener("click", function () {
+    console.log("削除");
+  });
 
   // divタグの下に子要素を追加
   div.appendChild(li);
