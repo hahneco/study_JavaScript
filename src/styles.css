@@ -81,3 +81,7 @@ button:hover {
   align-items: center;
   padding-bottom: var(--padding-bottom);
 }
+
+.red {
+  color: red;
+}
