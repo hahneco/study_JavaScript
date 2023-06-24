@@ -22,20 +22,8 @@ const makeTodoLists = (inputText) => {
   const div = document.createElement("div");
   div.className = "list-row";
 
-  // li生成
-  const li = document.createElement("li");
-  li.innerText = inputText;
-
-  const completeButton = document.createElement("button");
-  makeCompleteButton(completeButton);
-
-  const deleteButton = document.createElement("button");
-  makeDeleteButtonButton(deleteButton)
-
-  // divタグの下に子要素を追加
-  div.appendChild(li);
-  div.appendChild(completeButton);
-  div.appendChild(deleteButton);
+  // 未完了のTODOリストに追すするDOMを生成
+  inCompleteDomCreate(div, inputText);
 
   // 未完了のリストに追加
   document.getElementById("incomplete-list").appendChild(div);
@@ -101,6 +89,25 @@ const makeDeleteButtonButton = (target) => {
   })
 }
 
+// 未完了のTODOリスト用DOM生成関数
+const inCompleteDomCreate = (target, todoTitle) => {
+  // liタグ生成
+  const li = document.createElement("li");
+  li.innerText = todoTitle;
+
+  const completeButton = document.createElement("button");
+  makeCompleteButton(completeButton);
+
+  const deleteButton = document.createElement("button");
+  makeDeleteButtonButton(deleteButton)
+
+  // divタグの下に子要素を追加
+  target.appendChild(li);
+  target.appendChild(completeButton);
+  target.appendChild(deleteButton);
+}
+
+
 
 // イベント
 // 追加ボタンのclickイベント
@@ -119,30 +126,15 @@ const onClickBack = () => {
 
       // 「未完了のTODO」に追加
       tmpAddTarget = targetList;
-      console.log(tmpAddTarget)
 
       // TODO内テキストを取得
       const text = tmpAddTarget.firstElementChild.innerText;
 
       // div以下を初期化
       tmpAddTarget.textContent = null;
-      console.log(tmpAddTarget)
-      console.log(text)
 
-      // liタグ生成
-      const li = document.createElement("li");
-      li.innerText = text;
-
-      const completeButton = document.createElement("button");
-      makeCompleteButton(completeButton);
-
-      const deleteButton = document.createElement("button");
-      makeDeleteButtonButton(deleteButton)
-
-      // divタグの下に子要素を追加
-      tmpAddTarget.appendChild(li);
-      tmpAddTarget.appendChild(completeButton);
-      tmpAddTarget.appendChild(deleteButton);
+      // 未完了のTODOリストに追すするDOMを生成
+      inCompleteDomCreate(tmpAddTarget, text);
 
       // 未完了のリストに追加
       document.getElementById("incomplete-list").appendChild(tmpAddTarget);
