@@ -1,0 +1,87 @@
+/* デザイントークン */
+:root {
+  /* 基本カラー */
+  --blue: #c1ffff;
+  --yellow: #fdffce;
+  --gray: #dfdede;
+
+  /* 幅,スペース */
+  --contents-width: clamp(400px, 50vw, 600px); /* clamp(最小値, 推奨値, 最大値) */
+  --padding: clamp(8px, 2vw, 16px);
+  --margin: clamp(8px, 2vw, 16px);
+  --border-radius: clamp(8px, 2vw, 16px);
+  --padding-bottom: clamp(4px, 1vw, 8px);
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 6px 16px;
+  outline: none;
+}
+
+button {
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 4px 16px;
+  transition: .3s;
+}
+
+button:hover {
+  background-color: coral;
+  color: white;
+  cursor: pointer;
+}
+
+.basicContainer {
+  padding: var(--padding);
+  margin: var(--margin);
+  border-radius: var(--border-radius);
+}
+
+.input-area {
+  background-color: var(--blue);
+  width: var(--contents-width);
+  height: 30px;
+}
+
+.incomplete-area {
+  background-color: var(--yellow);
+  width: var(--contents-width);
+  height: 200px;
+}
+
+.complete-area {
+  background-color: var(--gray);
+  width: var(--contents-width);
+  height: 200px;
+}
+
+.title {
+  text-align: center;
+  margin-top: 0;
+  font-weight: 900;
+  color: #666;
+}
+
+.list-row {
+  display: flex;
+  align-items: center;
+  padding-bottom: var(--padding-bottom);
+}
+
+.red {
+  color: red;
+}
